@@ -1,2 +1,2 @@
-$env:PORT=5000
+$env:PORT=80
 npm start
