@@ -14,8 +14,9 @@ class Weather extends React.Component{
     }
 
     updateText() {
-     fetch(`http://gd.geobytes.com/GetCityDetails`)
+     fetch(`https://cors-anywhere.herokuapp.com/gd.geobytes.com/GetCityDetails`)
         .then(response => response.json())
+        .then(data => console.log(data.geobytescity))
         .then(data => this.setState({
             text: data.geobytescity
         }))
@@ -25,7 +26,7 @@ class Weather extends React.Component{
     render(){
         return(
             <div class="panel norris">
-                chuck norris api
+                location
                 <button onClick={this.updateText} type="text">Refresh</button>
                 <div>
                 {this.state.text}
