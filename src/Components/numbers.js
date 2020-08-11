@@ -20,12 +20,12 @@ class Numbers extends React.Component{
             .then(data => this.setState({
                 text: data.text
             }))
-            .catch(error => this.setState({ text: 'error fetching data' }))
+            .catch(error => this.setState({ text: 'error fetching data '+error.message }))
      }
 
     render() {
         return (
-            <div class="panel numbers">
+            <div className="panel numbers">
                  numbers api
                  <input onChange={this.updateText} type="text" ref="in1"></input>
                  <div>

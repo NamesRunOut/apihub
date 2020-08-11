@@ -19,12 +19,12 @@ class Norris extends React.Component{
         .then(data => this.setState({
             text: data.value
         }))
-        .catch(error => this.setState({ text: 'error fetching data' }))
+        .catch(error => this.setState({ text: 'error fetching data '+error.message }))
     }
 
     render(){
         return(
-            <div class="panel norris">
+            <div className="panel norris">
                 chuck norris api
                 <button onClick={this.updateText} type="text">Refresh</button>
                 <div>

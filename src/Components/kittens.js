@@ -19,7 +19,7 @@ class Kitten extends React.Component{
 
     render(){
         return(
-            <div class="panel kitten">
+            <div className="panel kitten">
                 placeholder kitten
                 <img src=`https://placekitten.com/150/150` />
             </div>
