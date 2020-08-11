@@ -5,6 +5,7 @@ import Nameday from './Components/nameday.js'
 import Numbers from './Components/numbers.js'
 import Bored from './Components/bored.js'
 import Card from './Components/card.js'
+import Weather from './Components/weather.js'
 
 class App extends Component {
     constructor(){
@@ -26,6 +27,7 @@ class App extends Component {
             <Numbers />
             <Norris />
             <Card />
+            <Weather />
         </div>
       );
     }
