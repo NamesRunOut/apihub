@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
 class Weather extends React.Component{
+
     constructor(){
         super();
         this.state = {
             text: "",
-            city: ""
+            city: "",
+            country: ""
         }
         this.updateCity = this.updateCity.bind(this);
         this.updateText = this.updateText.bind(this);
@@ -13,54 +15,61 @@ class Weather extends React.Component{
     }
 
     componentDidMount() {
-          //  window.addEventListener('load', this.updateCity);
+           window.addEventListener('load', this.updateCity);
     }
 
     updateCity() {
      fetch('https://cors-anywhere.herokuapp.com/gd.geobytes.com/GetCityDetails')
         .then(response => response.json())
        // .then(data => console.log(data.geobytescity))
-        .then(data => this.setState({
-            city: data.geobytescity,
-            text: ""
-        }))
-        .then(console.log(this.state.city))
-        .then(this.updateText())
+        /*.then(data => {this.setState({
+            country: data.geobytescountry
+        }); return data;})*/
+        //.then(data => this.assignValue(data.geobytescity))
+        .then(data => this.loadCity(data.geobytescity))
         .catch(error => this.setState({ text: 'error fetching data '+error.message }))
     }
 
-    loadCity(){
-        const value = this.refs.wea.value;
-        //console.log(value)
-        this.setState(prevState => {
-                return {
-                  city: value,
-                  text: prevState.text
-                }
-              });
-        this.updateText();
+    loadCity(value){
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=d0ca8d3b92279927c97dbc726daa6886`)
+         .then(response => response.json())
+         .then(data => {this.assignValue(data.name); return data;})
+         .then(data => this.setState({
+                 city: data.name,
+                 text: data.weather[0].description,
+                 country: data.sys.country
+             }))
+         .catch(error => this.setState({ text: 'error fetching data '+error.message }))
     }
 
     updateText() {
-        let weather;
-        const value = this.refs.wea.value;
-      //  console.log(`api.openweathermap.org/data/2.5/weather?q=${value}&appid=d0ca8d3b92279927c97dbc726daa6886`)
-         fetch(`api.openweathermap.org/data/2.5/weather?q=${value}&appid=d0ca8d3b92279927c97dbc726daa6886`)
-            .then(response => console.log(response))
+         const value = this.refs.wea.value;
+         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=d0ca8d3b92279927c97dbc726daa6886`)
             .then(response => response.json())
+            //.then(response => console.log(response))
             .then(data => this.setState({
+                city: data.name,
                 text: data.weather[0].description,
-                city: data.name
+                country: data.sys.country
             }))
             .catch(error => this.setState({ text: 'error fetching data '+error.message }))
         }
 
+    assignValue(i){
+         document.getElementById("wea").value=i;
+    }
+
+     removeValue(){
+        document.getElementById("wea").value="";
+     }
+
     render(){
         return(
-            <div className="panel norris">
+            <div className="panel weather">
                 location, type if not applicable
-                <input onChange={this.updateText} type="text" ref="wea"></input>
+                <input onChange={this.updateText} type="text" ref="wea" id="wea" onClick={this.removeValue}></input>
                 <div>
+                {this.state.country},
                 {this.state.text}
                 </div>
             </div>

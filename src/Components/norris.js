@@ -14,7 +14,7 @@ class Norris extends React.Component{
     }
 
     updateText() {
-     fetch(`http://api.chucknorris.io/jokes/random`)
+     fetch(`https://cors-anywhere.herokuapp.com/http://api.chucknorris.io/jokes/random`)
         .then(response => response.json())
         .then(data => this.setState({
             text: data.value
