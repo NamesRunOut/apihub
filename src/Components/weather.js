@@ -13,7 +13,7 @@ class Weather extends React.Component{
     }
 
     componentDidMount() {
-            window.addEventListener('load', this.updateCity);
+          //  window.addEventListener('load', this.updateCity);
     }
 
     updateCity() {
@@ -24,8 +24,9 @@ class Weather extends React.Component{
             city: data.geobytescity,
             text: ""
         }))
+        .then(console.log(this.state.city))
+        .then(this.updateText())
         .catch(error => this.setState({ text: 'error fetching data '+error.message }))
-      this.updateText();
     }
 
     loadCity(){
@@ -42,9 +43,11 @@ class Weather extends React.Component{
 
     updateText() {
         let weather;
-         fetch('api.openweathermap.org/data/2.5/weather?q='+this.state.city+'&appid=d0ca8d3b92279927c97dbc726daa6886')
+        const value = this.refs.wea.value;
+      //  console.log(`api.openweathermap.org/data/2.5/weather?q=${value}&appid=d0ca8d3b92279927c97dbc726daa6886`)
+         fetch(`api.openweathermap.org/data/2.5/weather?q=${value}&appid=d0ca8d3b92279927c97dbc726daa6886`)
+            .then(response => console.log(response))
             .then(response => response.json())
-            .then(data => console.log(data, `api.openweathermap.org/data/2.5/weather?q=`+this.state.city+`&appid=d0ca8d3b92279927c97dbc726daa6886`))
             .then(data => this.setState({
                 text: data.weather[0].description,
                 city: data.name
@@ -56,7 +59,7 @@ class Weather extends React.Component{
         return(
             <div className="panel norris">
                 location, type if not applicable
-                <input onChange={this.loadCity} type="text" ref="wea" value={this.state.city}></input>
+                <input onChange={this.updateText} type="text" ref="wea"></input>
                 <div>
                 {this.state.text}
                 </div>
