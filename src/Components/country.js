@@ -56,7 +56,7 @@ class Country extends React.Component{
 
     render(){
         return(
-            <div className="panel weather">
+            <div className="panel country">
                 country info
                 <input onChange={this.loadCountryv2} type="text" ref="con" id="con" onClick={this.removeValue}></input>
                 <div>

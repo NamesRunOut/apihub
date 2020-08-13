@@ -1,0 +1,45 @@
+.weather{
+    margin: 10px;
+    padding: 25px;
+    max-height: 250px;
+    border-radius: 25px;
+    background: #eceef9;
+    box-shadow:  20px 20px 60px #c9cad4,
+                 -20px -20px 60px #ffffff;
+    flex: 0 1 150px;
+    color: white;
+    display: grid;
+    grid-template-columns: auto minmax(100px, 25%);
+    position: relative;
+}
+.weather:nth-child(1){
+    position: relative;
+    display: flex;
+}
+.data-container{
+
+}
+.data-container:nth-child(1){
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#wea{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    color: white;
+}
+.sunny{
+    background: rgb(50,148,228);
+    background: linear-gradient(120deg, rgba(50,148,228,1) 0%, rgba(144,184,254,1) 100%);
+}
+.dark{
+    background: rgb(79,61,166);
+    background: linear-gradient(120deg, rgba(79,61,166,1) 0%, rgba(217,114,176,1) 100%);
+}
+.rainy{
+    background: rgb(103,229,221);
+    background: linear-gradient(120deg, rgba(103,229,221,1) 0%, rgba(219,246,230,1) 100%);
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style/weather.css'
 
 class Weather extends React.Component{
 
@@ -7,7 +8,9 @@ class Weather extends React.Component{
         this.state = {
             text: "",
             city: "",
-            country: ""
+            country: "",
+            temp: 0,
+            icon: ""
         }
         this.updateCity = this.updateCity.bind(this);
         this.updateText = this.updateText.bind(this);
@@ -37,7 +40,9 @@ class Weather extends React.Component{
          .then(data => this.setState({
                  city: data.name,
                  text: data.weather[0].description,
-                 country: data.sys.country
+                 country: data.sys.country,
+                 temp: (data.main.temp-273.15).toFixed(1),
+                 icon: data.weather[0].icon
              }))
          .catch(error => this.setState({ text: 'error fetching data '+error.message }))
     }
@@ -50,7 +55,9 @@ class Weather extends React.Component{
             .then(data => this.setState({
                 city: data.name,
                 text: data.weather[0].description,
-                country: data.sys.country
+                country: data.sys.country,
+                temp: (data.main.temp-273.15).toFixed(1),
+                icon: data.weather[0].icon
             }))
             .catch(error => this.setState({ text: 'error fetching data '+error.message }))
         }
@@ -65,11 +72,18 @@ class Weather extends React.Component{
 
     render(){
         return(
-            <div className="panel weather">
-                location, type if not applicable
-                <input onChange={this.updateText} type="text" ref="wea" id="wea" onClick={this.removeValue}></input>
+            <div className="panel weather dark">
+                <div className="data-container">
+                    <div>
+                        <h1>{this.state.temp}°C</h1>
+                        <input onChange={this.updateText} type="text" ref="wea" id="wea" onClick={this.removeValue}></input>
+                        , {this.state.country}
+                    </div>
+                    <div>
+                        click location if not applicable
+                    </div>
+                </div>
                 <div>
-                {this.state.country},
                 {this.state.text}
                 </div>
             </div>
