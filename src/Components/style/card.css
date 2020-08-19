@@ -1,3 +1,31 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+}
 .cardImage{
+    width: 226px;
+    height: 314px;
+}
+#drawCard{
+    margin: 5px;
+    padding: 5px;
+    margin-top: 0.83em;
+    border: none;
+    color: #8490a4;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    background: #eceef9;
+    border-radius: 50px;
+    box-shadow:  4px 4px 12px #c9cad4,
+                       -4px -4px 12px #ffffff;
+}
 
+@media(max-width: 991px){
+   .card{
+    width: 100%;
+    max-width: 100%;
+   }
 }

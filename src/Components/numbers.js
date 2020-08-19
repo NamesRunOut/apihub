@@ -28,13 +28,13 @@ class Numbers extends React.Component{
     render() {
         return (
             <div className="panel numbers">
-                <h1>Numbers API</h1>
-                 <h2>Fun number trivia</h2>
-                 <div>
+                <h2>Numbers API</h2>
+                 <h3>Fun number trivia</h3>
+                 <div id="inputBar">
                    <input onChange={this.updateText} type="text" ref="in1" id="in1"></input>
-                   <img src={magnifier} id="magnifier" />
+                   <img src={magnifier} className="magnifier" />
                  </div>
-                 <div>
+                 <div id="response">
                     {this.state.text}
                   </div>
              </div>

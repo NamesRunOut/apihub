@@ -20,15 +20,25 @@ class App extends Component {
 
    render() {
       return (
-        <div class="container">
-            <Weather />
-            <Nameday />
-            <Bored />
-            <Numbers />
-            <Norris />
-            <Card />
-            <Country />
-            <Ip />
+        <div className="container">
+        <div className="leftMain">
+            <div>
+                <Weather />
+                <Nameday />
+            </div>
+            <div>
+                <Bored />
+            </div>
+            <div>
+                <Country />
+                <Numbers />
+            </div>
+            </div>
+            <div className="rightMain">
+                <Ip />
+                <Card />
+                <Norris />
+            </div>
         </div>
       );
     }

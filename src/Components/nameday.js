@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style/nameday.css'
-import refresh from './icons/refreshBlack.svg'
+import refresh from './icons/refreshGrey.svg'
 
 class Nameday extends React.Component{
     constructor(){
@@ -28,8 +28,8 @@ class Nameday extends React.Component{
     render(){
         return(
             <div className="panel nameday">
-              <div className="placeholder">Polish Nameday Calendar<button type="text" className="refresh" onClick={this.updateText}><img src={refresh} className="refreshImage" /></button></div>
-              <div>
+              <div className="placeholder"><h2 className="namedayTitle">Polish Nameday Calendar</h2><button type="text" className="refresh" onClick={this.updateText}><img src={refresh} className="refreshImage" /></button></div>
+              <div className="namedayTitle">
                     {this.state.text}
               </div>
              </div>

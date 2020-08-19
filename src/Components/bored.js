@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from '@material-ui/core/Slider';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import './style/bored.css'
 
  const marksAccess = [
@@ -46,6 +47,35 @@ import './style/bored.css'
         label: 'expensive',
       }
     ];
+
+       const CustSlider = withStyles({
+          root: {
+            color: '#574b90',
+            height: 8,
+          },
+          thumb: {
+            height: 24,
+            width: 24,
+            backgroundColor: '#574b90',
+            border: '2px solid black',
+            marginTop: -8,
+            marginLeft: -12,
+            '&:focus, &:hover, &$active': {
+              boxShadow: 'inherit',
+            },
+          },
+          active: {},
+          valueLabel: {
+          },
+          track: {
+            height: 8,
+            borderRadius: 12,
+          },
+          rail: {
+            height: 8,
+            borderRadius: 12,
+          },
+        })(Slider);
 
 class Bored extends React.Component{
     constructor(){
@@ -117,17 +147,19 @@ class Bored extends React.Component{
 
     render(){
         return(
-            <div class="panel bored">
-                bored api
-                <button onClick={this.updateText} type="text">Refresh</button>
+            <div className="panel bored">
+                <div className="header"><h1>Activity API</h1></div>
+                <div className="main">
                 <div>
-                    activity: {this.state.text}<br />
-                    accessibility: {this.state.returnAcc}<br />
+                    <h2>{this.state.text}</h2><br />
+                   <p> accessibility: {this.state.returnAcc}<br />
                     type: {this.state.returnTyp}<br />
                     participants: {this.state.returnPar}<br />
-                    price: {this.state.returnPri}<br />
+                    price: {this.state.returnPri}<br /></p>
                 </div>
+                <div className="right">
              <Slider
+                     className="slider"
                      onChange={this.handleChange1}
                      //valueLabelDisplay="auto"
                      aria-labelledby="continuous-slider"
@@ -135,36 +167,38 @@ class Bored extends React.Component{
                      min={0}
                      max={1}
                      marks={marksAccess}
-              /> max accessibility 1-hardest 0-easiest: {this.state.accessibility}
+              />
               <Slider
+                className="slider"
                 onChange={this.handleChange2}
                 aria-labelledby="continuous-slider"
                 step={1}
                 min={1}
                 max={5}
                 marks={marksParticipants}
-              /> no participants: {this.state.participants}
+              />
               <Slider
+                className="slider"
                 onChange={this.handleChange3}
                 aria-labelledby="continuous-slider"
                 step={0.01}
                 min={0}
                 max={1}
                 marks={marksPrice}
-              /> max price 0-cheap 1-expensive: {this.state.price}
-              <div class="dropdown">
-                <button class="dropbtn">Dropdown</button>
-                <div class="dropdown-content">
-                <button onClick={() => this.handleCategory("education")}>education</button>
-                <button onClick={() => this.handleCategory("recreational")}>recreational</button>
-                <button onClick={() => this.handleCategory("social")}>social</button>
-                <button onClick={() => this.handleCategory("diy")}>diy</button>
-                <button onClick={() => this.handleCategory("charity")}>charity</button>
-                <button onClick={() => this.handleCategory("cooking")}>cooking</button>
-                <button onClick={() => this.handleCategory("relaxation")}>relaxation</button>
-                <button onClick={() => this.handleCategory("music")}>music</button>
-                <button onClick={() => this.handleCategory("busywork")}>busywork</button>
-                </div>
+              />
+              <button onClick={this.updateText} type="text" id="regen">REGENERATE</button>
+              </div>
+              </div>
+              <div className="buttons">
+                <button onClick={() => this.handleCategory("education")}>EDUCATION</button>
+                <button onClick={() => this.handleCategory("recreational")}>RECREATIONAL</button>
+                <button onClick={() => this.handleCategory("social")}>SOCIAL</button>
+                <button onClick={() => this.handleCategory("diy")}>DIY</button>
+                <button onClick={() => this.handleCategory("charity")}>CHARITY</button>
+                <button onClick={() => this.handleCategory("cooking")}>COOKING</button>
+                <button onClick={() => this.handleCategory("relaxation")}>RELAXATION</button>
+                <button onClick={() => this.handleCategory("music")}>MUSIC</button>
+                <button onClick={() => this.handleCategory("busywork")}>BUSYWORK</button>
               </div>
              </div>
             )

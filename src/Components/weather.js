@@ -73,7 +73,7 @@ class Weather extends React.Component{
     }
 
     loadCity(value){
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=d0ca8d3b92279927c97dbc726daa6886`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=`+process.env.WEATHER_API)
          .then(response => response.json())
          .then(data => {this.assignValue(data.name); return data;})
          .then(data => {
@@ -93,7 +93,7 @@ class Weather extends React.Component{
     updateText() {
          const value = this.refs.wea.value;
          //console.log(value)
-         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=d0ca8d3b92279927c97dbc726daa6886`)
+         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=`+process.env.WEATHER_API)
             .then(response => response.json())
             //.then(response => console.log(response))
             .then(data => {

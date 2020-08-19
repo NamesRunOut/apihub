@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import refresh from './icons/refreshGrey.svg'
+import './style/norris.css'
 
 class Norris extends React.Component{
     constructor(){
@@ -25,8 +27,8 @@ class Norris extends React.Component{
     render(){
         return(
             <div className="panel norris">
-                chuck norris api
-                <button onClick={this.updateText} type="text">Refresh</button>
+                <div className="norrisTitle"><h2 className="namedayTitle">Chuck Norris API</h2>
+                <button onClick={this.updateText} className="refresh"><img src={refresh} className="refreshImage" /></button></div>
                 <div>
                 {this.state.text}
                 </div>

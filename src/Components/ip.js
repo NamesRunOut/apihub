@@ -26,7 +26,7 @@ class Ip extends React.Component{
     render(){
         return(
             <div className="panel ip">
-                ip
+                <h2>Your IP address</h2>
                 <div>
                 {this.state.ip}
                 value may not be displayed if you're using an adblocker

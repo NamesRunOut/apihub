@@ -1,39 +1,65 @@
-.dropbtn {
-  background-color: #000000;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+.bored{
+    display: grid;
+    grid-template: auto 1fr auto;
+    width: 100%;
 }
-
-.dropdown {
-  position: relative;
-  display: inline-block;
+.main{
+    display: grid;
+    grid-template-columns: minmax(150px, 70%) 1fr;
 }
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.025);
-  z-index: 1;
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    padding-right: 2rem;
+    margin-top: 0.83em;
+    --width: 50%;
 }
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+.buttons{
+    padding-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-  display: block;
+.buttons > button {
+    margin: 5px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    color: #8490a4;
+    border: 0;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: #eceef9;
+    border-radius: 50px;
+    box-shadow:  4px 4px 12px #c9cad4,
+                       -4px -4px 12px #ffffff;
 }
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+.buttons > button:hover {
+    color: #fc85ae;
+}
+.buttons > button:active {
+    color: #fc85ae;
+}
+#regen{
+    margin: 5px;
+        padding: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: none;
+        color: #8490a4;
+        border: 0;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        background: #eceef9;
+        border-radius: 50px;
+        box-shadow:  4px 4px 12px #c9cad4,
+                           -4px -4px 12px #ffffff;
+}
+#regen: hover{
+    color: #fc85ae;
 }

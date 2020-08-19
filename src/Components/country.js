@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './style/country.css'
+import magnifier from './icons/magnifier.svg'
 
 class Country extends React.Component{
 
@@ -6,7 +8,11 @@ class Country extends React.Component{
         super();
         this.state = {
             text: "",
-            country: ""
+            country: "",
+            capital: "",
+            region: "",
+            population: "",
+            currency: ""
         }
         this.initialLoadCountry = this.initialLoadCountry.bind(this);
         this.loadCountry = this.loadCountry.bind(this);
@@ -22,7 +28,7 @@ class Country extends React.Component{
         .then(response => response.json())
         .then(data => {this.setState({
                          country: data.geobytescountry
-                     }); return data})
+                     }); document.getElementById("con").value=data.geobytescountry; return data})
         .then(data => this.loadCountry(data.geobytescountry))
         .catch(error => this.setState({ text: 'error fetching data '+error.message }))
     }
@@ -32,6 +38,10 @@ class Country extends React.Component{
          .then(response => response.json())
          .then(data => this.setState({
                  country: data[0].name,
+                 capital: data[0].capital,
+                 region: data[0].region,
+                 population: data[0].population,
+                 currency: data[0].currencies[0].code
              }))
          .catch(error => this.setState({ text: 'error fetching data '+error.message }))
     }
@@ -57,10 +67,18 @@ class Country extends React.Component{
     render(){
         return(
             <div className="panel country">
-                country info
-                <input onChange={this.loadCountryv2} type="text" ref="con" id="con" onClick={this.removeValue}></input>
+                <h2>Country Info</h2>
+                <div id="inputBar">
+                                   <input onChange={this.loadCountryv2} type="text" ref="con" id="con" onClick={this.removeValue}></input>
+                                   <img src={magnifier} className="magnifier" />
+                 </div>
                 <div>
-                {this.state.country}
+                <h2>{this.state.country}, {this.state.region}</h2>
+                <div>
+                <p>Capital: {this.state.capital}</p>
+                <p>Population: {this.state.population}</p>
+                <p>Currency: {this.state.currency}</p>
+                </div>
                 </div>
             </div>
         )

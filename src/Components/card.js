@@ -27,11 +27,10 @@ class Card extends React.Component{
 
     render(){
         return(
-            <div class="panel card">
-                cards api
-                <button onClick={this.updateText} type="text">Refresh</button>
-                {this.state.text}
-                <img src={this.state.image} alt={this.state.text} class="cardImage" />
+            <div className="panel card">
+                <h2>{this.state.text}</h2>
+                <img src={this.state.image} alt={this.state.text} className="cardImage" />
+                <button onClick={this.updateText} id="drawCard">DRAW ANOTHER</button>
             </div>
         )
     }

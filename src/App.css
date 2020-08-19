@@ -2,14 +2,29 @@ html, body{
     margin: 0;
     padding: 0;
     max-width: 100%;
-    background-color: #98acfe;
+    background-color: #303a52;
     font-family: 'Montserrat', sans-serif;
     --font-family: 'Raleway', sans-serif;
 }
+.panel{
+    margin: 10px;
+    padding: 2rem;
+    border-radius: 25px;
+    background: #eceef9;
+}
 .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(350px, 80%) 1fr;
+}
+#root{
+    width: 80vw;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: #465780;
+    padding: 2rem;
+    border-radius: 50px;
 }
 div{
     --max-width: 90vw;
@@ -23,7 +38,7 @@ hr{
 .refresh{
   border: none;
   background: rgba(0,0,0,0);
-  position:absolute;
+  position: absolute;
   top: 0;
   right: 0;
 }
@@ -33,8 +48,40 @@ hr{
   margin-bottom: 2px;
 }
 .refreshImage{
-  height: 1.6em;
-  border-radius: 5px;
-  --box-shadow:  2px 2px 6px #c9cad4,
+  padding: 5px;
+  margin: 0;
+  height: 30px;
+  border-radius: 50px;
+  box-shadow:  2px 2px 6px #c9cad4,
                    -2px -2px 6px #ffffff;
+}
+.leftMain > div {
+    display: flex;
+}
+.rightMain{
+    max-width: 300px;
+}
+
+@media(max-width: 991px){
+  .container{
+    display: block;
+    width: 100%;
+  }
+  .leftMain > div {
+      display: block;
+  }
+  .rightMain{
+      max-width: 100%;
+      display: block;
+  }
+  #root{
+      width: 90vw;
+      margin: 0;
+      background-color: #303a52;
+      padding: 0;
+      border-radius: 0;
+  }
+  .panel{
+    width: 100%;
+  }
 }
