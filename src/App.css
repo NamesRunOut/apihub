@@ -1,4 +1,7 @@
-body{
+html, body{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
     background-color: #98acfe;
     font-family: 'Montserrat', sans-serif;
     --font-family: 'Raleway', sans-serif;
@@ -9,8 +12,29 @@ body{
     justify-content: center;
 }
 div{
-    max-width: 90vw;
-        border-radius: 25px;
-        box-shadow:  2px 2px 6px #c9cad4,
+    --max-width: 90vw;
+        --border-radius: 25px;
+        --box-shadow:  2px 2px 6px #c9cad4,
                          -2px -2px 6px #ffffff;
+}
+hr{
+  margin-top: 2px;
+}
+.refresh{
+  border: none;
+  background: rgba(0,0,0,0);
+  position:absolute;
+  top: 0;
+  right: 0;
+}
+.placeholder{
+  position: relative;
+  width: 100%;
+  margin-bottom: 2px;
+}
+.refreshImage{
+  height: 1.6em;
+  border-radius: 5px;
+  --box-shadow:  2px 2px 6px #c9cad4,
+                   -2px -2px 6px #ffffff;
 }

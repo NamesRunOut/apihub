@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './style/numbers.css'
+import magnifier from './icons/magnifier.svg'
 
 class Numbers extends React.Component{
     constructor(){
@@ -26,8 +28,12 @@ class Numbers extends React.Component{
     render() {
         return (
             <div className="panel numbers">
-                 numbers api
-                 <input onChange={this.updateText} type="text" ref="in1"></input>
+                <h1>Numbers API</h1>
+                 <h2>Fun number trivia</h2>
+                 <div>
+                   <input onChange={this.updateText} type="text" ref="in1" id="in1"></input>
+                   <img src={magnifier} id="magnifier" />
+                 </div>
                  <div>
                     {this.state.text}
                   </div>

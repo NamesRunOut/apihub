@@ -21,12 +21,12 @@ class App extends Component {
    render() {
       return (
         <div class="container">
+            <Weather />
             <Nameday />
             <Bored />
             <Numbers />
             <Norris />
             <Card />
-            <Weather />
             <Country />
             <Ip />
         </div>
