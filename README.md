@@ -2,6 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+In order ofr the weather feature to work, you'll need your own API key, which you can obtain for free here: https://openweathermap.org/
 In the project directory, you can run:
 
 ### `npm start`
