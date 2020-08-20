@@ -13,7 +13,7 @@ class Numbers extends React.Component{
 
     updateText() {
             const value = this.refs.in1.value;
-            fetch(`http://numbersapi.com/${value}?json`)
+            fetch(`https://numbersapi.com/${value}?json`)
             .then(response => {
                 if (response.ok) return response;
                 else throw Error('error fetching data');

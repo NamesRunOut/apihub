@@ -111,7 +111,7 @@ class Bored extends React.Component{
     }
 
     updateText() {
-          fetch(`http://www.boredapi.com/api/activity?maxprice=${this.state.price}&participants=${this.state.participants}&maxaccessibility=${this.state.accessibility}&type=${this.state.type}`)
+          fetch(`https://www.boredapi.com/api/activity?maxprice=${this.state.price}&participants=${this.state.participants}&maxaccessibility=${this.state.accessibility}&type=${this.state.type}`)
           .then(response => response.json())
            .then(data => this.setState({
                text: data.activity,
