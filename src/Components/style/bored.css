@@ -2,6 +2,8 @@
     display: grid;
     grid-template: auto 1fr auto;
     width: 100%;
+    background: rgb(170,174,242);
+background: linear-gradient(176deg, rgba(170,174,242,1) 0%, rgba(209,211,244,1) 100%);
 }
 .main{
     display: grid;
@@ -26,40 +28,49 @@
 }
 .buttons > button {
     margin: 5px;
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
     border: none;
-    color: #8490a4;
+    --color: #8490a4;
+    color: #ebebeb;
     border: 0;
     border-radius: 5px;
     letter-spacing: 1px;
-    background: #eceef9;
-    border-radius: 50px;
-    box-shadow:  4px 4px 12px #c9cad4,
+    --background: #eceef9;
+    background: #57669e;
+    --box-shadow:  4px 4px 12px #c9cad4,
                        -4px -4px 12px #ffffff;
 }
 .buttons > button:hover {
-    color: #fc85ae;
+    background-color: rgba(0,0,0,0.5);
+    transition-duration: 0.2s;
 }
 .buttons > button:active {
-    color: #fc85ae;
+    background-color: rgba(0,0,0,0.7);
+    transition-duration: 0.1s;
 }
 #regen{
     margin: 5px;
-        padding: 5px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
         border: none;
-        color: #8490a4;
+        --color: #8490a4;
+        color: #ebebeb;
         border: 0;
         border-radius: 5px;
         letter-spacing: 1px;
-        background: #eceef9;
-        border-radius: 50px;
-        box-shadow:  4px 4px 12px #c9cad4,
+        --background: #eceef9;
+        background: #57669e;
+        --box-shadow:  4px 4px 12px #c9cad4,
                            -4px -4px 12px #ffffff;
 }
-#regen: hover{
-    color: #fc85ae;
+#regen:hover{
+    background-color: rgba(0,0,0,0.5);
+    transition-duration: 0.2s;
+}
+#regen:active{
+    background-color: rgba(0,0,0,0.7);
+    transition-duration: 0.1s;
 }

@@ -10,7 +10,7 @@ html, body{
     margin: 10px;
     padding: 2rem;
     border-radius: 25px;
-    background: #eceef9;
+    background: #303a52;
 }
 .container{
     display: grid;
@@ -52,8 +52,12 @@ hr{
   margin: 0;
   height: 30px;
   border-radius: 50px;
-  box-shadow:  2px 2px 6px #c9cad4,
+  --box-shadow:  2px 2px 6px #c9cad4,
                    -2px -2px 6px #ffffff;
+}
+.refreshImage:hover{
+  background-color: rgba(252, 133, 174, 0.5);
+  transition-duration: 0.2s;
 }
 .leftMain > div {
     display: flex;
@@ -61,8 +65,31 @@ hr{
 .rightMain{
     max-width: 300px;
 }
+.contactBar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contactBar > a {
+  margin: 5px;
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50px;
+}
+.contactBar > a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition-duration: 0.2s;
+}
+.contactImage{
+  max-width: 40px;
+  max-height: 40px;
+  padding: 5px;
+}
 
 @media(max-width: 991px){
+  html, body{
+    background-color: #465780;
+  }
   .container{
     display: block;
     width: 100%;
@@ -77,7 +104,7 @@ hr{
   #root{
       width: 90vw;
       margin: 0;
-      background-color: #303a52;
+      background-color: #465780;
       padding: 0;
       border-radius: 0;
   }

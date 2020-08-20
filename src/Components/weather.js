@@ -22,6 +22,8 @@ import windD from './icons/windD.svg'
 import wind_cloudD from './icons/wind_cloudD.svg'
 import thunder_rainD from './icons/thunder_rainD.svg'
 
+const WEATHER_KEY = ''
+
 class Weather extends React.Component{
 
     constructor(){
@@ -73,7 +75,7 @@ class Weather extends React.Component{
     }
 
     loadCity(value){
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=`+process.env.WEATHER_API)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=`+WEATHER_KEY)
          .then(response => response.json())
          .then(data => {this.assignValue(data.name); return data;})
          .then(data => {
@@ -93,7 +95,7 @@ class Weather extends React.Component{
     updateText() {
          const value = this.refs.wea.value;
          //console.log(value)
-         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=`+process.env.WEATHER_API)
+         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=`+WEATHER_KEY)
             .then(response => response.json())
             //.then(response => console.log(response))
             .then(data => {

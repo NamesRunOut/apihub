@@ -1,21 +1,12 @@
 .weather{
     margin: 10px;
-    --padding: 25px;
-    --padding-left: 35px;
-    --padding-right: 35px;
     border-radius: 25px;
     height: auto;
-    --background: #eceef9;
-    --box-shadow:  20px 20px 60px #c9cad4,
-                 -20px -20px 60px #ffffff;
     color: white;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: flex-end;
-    --justify-content: flex-end;
     position: relative;
-    --max-width: 500px;
-    --min-width: 450px;
     min-width: 40%;
 }
 .weaPic{
@@ -23,13 +14,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    --max-width: 50px;
-    height: 60px;
+    height: auto;
 }
 #weaIcon{
-  height: 50px;
-  max-height: 50px;
-  max-width: 50px;
+  height: 3.5em;
   margin: auto;
 }
 #wea{
@@ -75,11 +63,22 @@ h1{
     background: linear-gradient(120deg, rgba(103,229,221,1) 0%, rgba(219,246,230,1) 100%);
 }
 
+@media(max-width: 1600px){
+  .weather{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: center;
+  }
+}
 @media(max-width: 991px){
   .weather{
       width: 100%;
       height: auto;
       max-width: 100%;
       min-width: 100%;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: flex-end;
   }
 }

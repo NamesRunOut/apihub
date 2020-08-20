@@ -1,12 +1,13 @@
 .country{
     min-width: 150px;
     width: 50%;
+    color: #eceef9;
 }
 #con{
     border-radius: 50px;
-      background: #eceef9;
-      box-shadow: inset 5px 5px 15px #919eb8,
-                inset -5px -5px 15px #ffffff;
+      background: #303a52;
+      box-shadow: inset 5px 5px 15px #293146,
+                inset -5px -5px 15px #37435e;
       height: 1.5em;
       width: 90%;
       border: none;
@@ -16,7 +17,9 @@
       font-size: 1.5em;
       margin: auto;
 }
-
+#info{
+  font-size: 1.5em;
+}
 @media(max-width: 991px){
    .country{
     width: 100%;

@@ -51,7 +51,11 @@ class Country extends React.Component{
             fetch(`https://restcountries.eu/rest/v2/name/${value}`)
              .then(response => response.json())
              .then(data => this.setState({
-                     country: data[0].name,
+                    country: data[0].name,
+                    capital: data[0].capital,
+                    region: data[0].region,
+                    population: data[0].population,
+                    currency: data[0].currencies[0].code
                  }))
              .catch(error => this.setState({ text: 'error fetching data '+error.message }))
     }
@@ -68,13 +72,14 @@ class Country extends React.Component{
         return(
             <div className="panel country">
                 <h2>Country Info</h2>
+                <h3>Find out more about a country of your choosing</h3>
                 <div id="inputBar">
                                    <input onChange={this.loadCountryv2} type="text" ref="con" id="con" onClick={this.removeValue}></input>
                                    <img src={magnifier} className="magnifier" />
                  </div>
                 <div>
                 <h2>{this.state.country}, {this.state.region}</h2>
-                <div>
+                <div id="info">
                 <p>Capital: {this.state.capital}</p>
                 <p>Population: {this.state.population}</p>
                 <p>Currency: {this.state.currency}</p>

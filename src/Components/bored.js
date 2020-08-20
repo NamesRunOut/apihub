@@ -50,30 +50,8 @@ import './style/bored.css'
 
        const CustSlider = withStyles({
           root: {
-            color: '#574b90',
+            color: '#57669e',
             height: 8,
-          },
-          thumb: {
-            height: 24,
-            width: 24,
-            backgroundColor: '#574b90',
-            border: '2px solid black',
-            marginTop: -8,
-            marginLeft: -12,
-            '&:focus, &:hover, &$active': {
-              boxShadow: 'inherit',
-            },
-          },
-          active: {},
-          valueLabel: {
-          },
-          track: {
-            height: 8,
-            borderRadius: 12,
-          },
-          rail: {
-            height: 8,
-            borderRadius: 12,
           },
         })(Slider);
 
@@ -158,7 +136,7 @@ class Bored extends React.Component{
                     price: {this.state.returnPri}<br /></p>
                 </div>
                 <div className="right">
-             <Slider
+             <CustSlider
                      className="slider"
                      onChange={this.handleChange1}
                      //valueLabelDisplay="auto"
@@ -168,7 +146,7 @@ class Bored extends React.Component{
                      max={1}
                      marks={marksAccess}
               />
-              <Slider
+            <CustSlider
                 className="slider"
                 onChange={this.handleChange2}
                 aria-labelledby="continuous-slider"
@@ -177,7 +155,7 @@ class Bored extends React.Component{
                 max={5}
                 marks={marksParticipants}
               />
-              <Slider
+            <CustSlider
                 className="slider"
                 onChange={this.handleChange3}
                 aria-labelledby="continuous-slider"
@@ -190,6 +168,7 @@ class Bored extends React.Component{
               </div>
               </div>
               <div className="buttons">
+
                 <button onClick={() => this.handleCategory("education")}>EDUCATION</button>
                 <button onClick={() => this.handleCategory("recreational")}>RECREATIONAL</button>
                 <button onClick={() => this.handleCategory("social")}>SOCIAL</button>
@@ -198,7 +177,7 @@ class Bored extends React.Component{
                 <button onClick={() => this.handleCategory("cooking")}>COOKING</button>
                 <button onClick={() => this.handleCategory("relaxation")}>RELAXATION</button>
                 <button onClick={() => this.handleCategory("music")}>MUSIC</button>
-                <button onClick={() => this.handleCategory("busywork")}>BUSYWORK</button>
+                <button onClick={() => this.handleCategory("busywork")}>BUSYWORK</button><br />
               </div>
              </div>
             )
