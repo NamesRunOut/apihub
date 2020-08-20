@@ -22,7 +22,7 @@ import windD from './icons/windD.svg'
 import wind_cloudD from './icons/wind_cloudD.svg'
 import thunder_rainD from './icons/thunder_rainD.svg'
 
-const WEATHER_KEY = ''
+const WEATHER_KEY = process.env.OPENWEATHER
 
 class Weather extends React.Component{
 
