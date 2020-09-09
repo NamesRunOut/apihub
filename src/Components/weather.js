@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style/weather.css'
+import '../css/main.css'
 
 import location from './icons/location.png'
 import cloud from './icons/cloud.svg'

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Slider from '@material-ui/core/Slider';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
-import './style/bored.css'
+import '../css/main.css'
 
  const marksAccess = [
       {

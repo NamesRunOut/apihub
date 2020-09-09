@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style/nameday.css'
+import '../css/main.css'
 import refresh from './icons/refreshGrey.svg'
 
 class Nameday extends React.Component{

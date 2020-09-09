@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style/country.css'
+import '../css/main.css'
 import magnifier from './icons/magnifier.svg'
 
 class Country extends React.Component{

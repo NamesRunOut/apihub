@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style/numbers.css'
+import '../css/main.css'
 import magnifier from './icons/magnifier.svg'
 
 class Numbers extends React.Component{

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style/ip.css'
+import '../css/main.css'
 
 class Ip extends React.Component{
 

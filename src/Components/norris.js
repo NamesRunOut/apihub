@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import refresh from './icons/refreshGrey.svg'
-import './style/norris.css'
+import '../css/main.css'
 
 class Norris extends React.Component{
     constructor(){
